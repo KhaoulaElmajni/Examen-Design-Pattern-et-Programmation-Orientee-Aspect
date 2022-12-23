@@ -9,23 +9,31 @@ import java.util.List;
 
 public class Classe extends Entite implements Observable {
 
-    List<Attribut> attributs =new ArrayList<>();
-    List<Methode> methodes = new ArrayList<>();
-    List<Constructeur> constructeurs = new ArrayList<>();
+    private List<Attribut> attributs =new ArrayList<>();
+    private List<Methode> methodes = new ArrayList<>();
+    private List<Constructeur> constructeurs = new ArrayList<>();
+    private ClassVisibilite visibilite;
 
+    private Cardinalite[] cardinalites = new Cardinalite[2];
 
-    List<Observer> observers = new ArrayList<>();
+    private List<Observer> observers = new ArrayList<>();
 
     public Classe(String nom) {
         super(nom);
     }
 
-    public Classe(String nom, List<Attribut> attributs, List<Methode> methodes, List<Constructeur> constructeurs, List<Observer> observers) {
+    public Classe(String nom,
+                  List<Attribut> attributs,
+                  List<Methode> methodes,
+                  List<Constructeur> constructeurs,
+                  List<Observer> observers,
+                  ClassVisibilite visibilite) {
         super(nom);
         this.attributs = attributs;
         this.methodes = methodes;
         this.constructeurs = constructeurs;
         this.observers = observers;
+        this.visibilite = visibilite;
     }
 
     @Override
@@ -34,11 +42,13 @@ public class Classe extends Entite implements Observable {
         observers.add(observer);
     }
 
+    @Log
     @Override
     public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
 
+    @Log
     @Override
     public void notifyObservers() {
         for(Observer o:observers){

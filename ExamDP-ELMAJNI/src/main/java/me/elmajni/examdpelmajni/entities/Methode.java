@@ -1,47 +1,88 @@
 package me.elmajni.examdpelmajni.entities;
 
+import me.elmajni.examdpelmajni.aspects.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Methode {
 
-    private String typeretour;
-    private String visibilite;
+    private String typeRetour;
+    private Visibilite visibilite;
     private String nom;
-    List<Parametre> parametres =  new ArrayList<>();
+    private List<Parametre> parametres =  new ArrayList<>();
 
+    private boolean isAbstract;
+    private boolean isStatic;
+    private boolean isFinal;
 
+    @Log
+    public boolean isAbstract() {
+        return isAbstract;
+    }
 
+    @Log
+    public void setAbstract(boolean anAbstract) {
+        isAbstract = anAbstract;
+    }
+
+    @Log
+    public boolean isStatic() {
+        return isStatic;
+    }
+
+    @Log
+    public void setStatic(boolean aStatic) {
+        isStatic = aStatic;
+    }
+
+    @Log
+    public boolean isFinal() {
+        return isFinal;
+    }
+
+    @Log
+    public void setFinal(boolean aFinal) {
+        isFinal = aFinal;
+    }
+
+    @Log
     public List<Parametre> getParametres() {
         return parametres;
     }
 
+    @Log
     public void setParametres(List<Parametre> parametres) {
         this.parametres = parametres;
     }
 
 
-
-    public String getTyperetour() {
-        return typeretour;
+    @Log
+    public String getTypeRetour() {
+        return typeRetour;
     }
 
-    public void setTyperetour(String typeretour) {
-        this.typeretour = typeretour;
+    @Log
+    public void setTypeRetour(String typeRetour) {
+        this.typeRetour = typeRetour;
     }
 
-    public String getVisibilite() {
+    @Log
+    public Visibilite getVisibilite() {
         return visibilite;
     }
 
-    public void setVisibilite(String visibilite) {
+    @Log
+    public void setVisibilite(Visibilite visibilite) {
         this.visibilite = visibilite;
     }
 
+    @Log
     public String getNom() {
         return nom;
     }
 
+    @Log
     public void setNom(String nom) {
         this.nom = nom;
     }

@@ -1,10 +1,13 @@
 package me.elmajni.examdpelmajni.entities;
 
 
+import me.elmajni.examdpelmajni.aspects.Log;
 import me.elmajni.examdpelmajni.design_patterns.Observable;
 import me.elmajni.examdpelmajni.design_patterns.Observer;
 
 public class ObserverImpl1 implements Observer {
+
+    @Log
     @Override
     public void update(Observable o) {
         //int nouvelEtat = ((ObservableImpl1)o).getEtat();

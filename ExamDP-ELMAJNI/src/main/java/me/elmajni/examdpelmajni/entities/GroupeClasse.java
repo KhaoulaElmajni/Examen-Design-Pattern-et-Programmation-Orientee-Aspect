@@ -1,11 +1,14 @@
 package me.elmajni.examdpelmajni.entities;
 
+import me.elmajni.examdpelmajni.aspects.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class GroupeClasse extends Entite{
 
     private List<Entite> children = new ArrayList<>();
+
 
     public GroupeClasse(String nom) {
         super(nom);

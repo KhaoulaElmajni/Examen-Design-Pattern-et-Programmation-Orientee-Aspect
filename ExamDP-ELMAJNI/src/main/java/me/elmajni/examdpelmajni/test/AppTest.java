@@ -1,8 +1,8 @@
 package me.elmajni.examdpelmajni.test;
 
 
-import me.elmajni.examdpelmajni.design_patterns.StrategyExportImpl;
-import me.elmajni.examdpelmajni.design_patterns.GenerateCodeImpl1;
+import me.elmajni.examdpelmajni.design_patterns.ExportDiagrammeBinaire;
+import me.elmajni.examdpelmajni.design_patterns.GenerateCodeJava;
 import me.elmajni.examdpelmajni.entities.*;
 
 public class AppTest {
@@ -12,7 +12,7 @@ public class AppTest {
         System.out.println("****************************Début de test du programme****************************");
 
         DiagrammeDeClasse diagrammeDeClasse = new DiagrammeDeClasse();
-        diagrammeDeClasse.setGenerateCode(new GenerateCodeImpl1());
+        diagrammeDeClasse.setGenerateCode(new GenerateCodeJava());
         diagrammeDeClasse.genererCode();
 
         GroupeClasse groupeClasse = new GroupeClasse("GroupeClasse");
@@ -26,11 +26,11 @@ public class AppTest {
         groupeClasse.add(new Annotation("annotation1"));
 
         System.out.println("****************Generer le code******************");
-        diagrammeDeClasse.setGenerateCode(new GenerateCodeImpl1());
+        diagrammeDeClasse.setGenerateCode(new GenerateCodeJava());
         diagrammeDeClasse.genererCode();
 
         System.out.println("*****************Exporter le code*****************");
-        diagrammeDeClasse.setExport(new StrategyExportImpl());
+        diagrammeDeClasse.setExport(new ExportDiagrammeBinaire());
         diagrammeDeClasse.exporterDiagramme();
 
 

@@ -1,12 +1,10 @@
 package me.elmajni.examdpelmajni.entities;
 
-public class Relation {
+public abstract class Relation {
     protected String name;
-
     public Relation(String name) {
         this.name = name;
     }
-
 
     public String getName() {
         return name;

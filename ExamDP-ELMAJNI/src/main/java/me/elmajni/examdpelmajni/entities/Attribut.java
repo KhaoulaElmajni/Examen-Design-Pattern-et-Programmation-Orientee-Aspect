@@ -1,10 +1,12 @@
 package me.elmajni.examdpelmajni.entities;
 
+import me.elmajni.examdpelmajni.aspects.Log;
+
 public class Attribut {
 
     private String nom;
-    private AttributType type;
-    private AttributVisibilite visibilite;
+    private Type type;
+    private Visibilite visibilite;
     private boolean isStatique;
     private boolean isFinal;
 
@@ -12,8 +14,8 @@ public class Attribut {
     }
 
     public Attribut(String nom,
-                    AttributType type,
-                    AttributVisibilite visibilite,
+                    Type type,
+                    Visibilite visibilite,
                     boolean isStatique,
                     boolean isFinal) {
         this.nom = nom;
@@ -23,42 +25,52 @@ public class Attribut {
         this.isFinal = isFinal;
     }
 
+    @Log
     public String getNom() {
         return nom;
     }
 
+    @Log
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public AttributType getType() {
+    @Log
+    public Type getType() {
         return type;
     }
 
-    public void setType(AttributType type) {
+    @Log
+    public void setType(Type type) {
         this.type = type;
     }
 
-    public AttributVisibilite getVisibilite() {
+    @Log
+    public Visibilite getVisibilite() {
         return visibilite;
     }
 
-    public void setVisibilite(AttributVisibilite visibilite) {
+    @Log
+    public void setVisibilite(Visibilite visibilite) {
         this.visibilite = visibilite;
     }
 
+    @Log
     public boolean isStatique() {
         return isStatique;
     }
 
+    @Log
     public void setStatique(boolean statique) {
         this.isStatique = statique;
     }
 
+    @Log
     public boolean isFinal() {
         return isFinal;
     }
 
+    @Log
     public void setFinal(boolean aFinal) {
         this.isFinal = aFinal;
     }

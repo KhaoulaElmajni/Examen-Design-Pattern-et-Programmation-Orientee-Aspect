@@ -1,23 +1,29 @@
 package me.elmajni.examdpelmajni.entities;
 
+import me.elmajni.examdpelmajni.aspects.Log;
+
 public abstract class Association extends Relation{
 
-    private EntiteSource entiteSrc;
-    private EntiteDestination entiteDst;
+    private Classe entiteSrc;
+    private Classe entiteDst;
 
-    public EntiteSource getEntiteSrc() {
+    @Log
+    public Classe getEntiteSrc() {
         return entiteSrc;
     }
 
-    public void setEntiteSrc(EntiteSource entiteSrc) {
+    @Log
+    public void setEntiteSrc(Classe entiteSrc) {
         this.entiteSrc = entiteSrc;
     }
 
-    public EntiteDestination getEntiteDst() {
+    @Log
+    public Classe getEntiteDst() {
         return entiteDst;
     }
 
-    public void setEntiteDst(EntiteDestination entiteDst) {
+    @Log
+    public void setEntiteDst(Classe entiteDst) {
         this.entiteDst = entiteDst;
     }
 
@@ -25,7 +31,7 @@ public abstract class Association extends Relation{
         super(name);
     }
 
-    public Association(EntiteSource entiteSrc, EntiteDestination entiteDst) {
+    public Association(Classe entiteSrc, Classe entiteDst) {
         super("Association");
         this.entiteSrc = entiteSrc;
         this.entiteDst = entiteDst;
